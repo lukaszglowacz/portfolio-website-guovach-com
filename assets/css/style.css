@@ -259,6 +259,53 @@ nav {
   z-index: 1;
 }
 
+.skill-icons-animation {
+  width: 30%;
+  height: 100%;
+  float: left;
+  margin-right: 1rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: -30%;
+  animation: slide-in 1.5s ease-in 5s forwards;
+  opacity: 0;
+}
+
+@keyframes slide-in {
+  0% {
+    right: -30%;
+    opacity: 0;
+  }
+  10% {
+      right: -2%;
+      opacity: 0.4;
+  }
+  100% {
+    right: 0%;
+    opacity: 1;
+  }
+}
+
+.skill-icons-animation img {
+  transition: transform 0.3s ease;
+}
+
+.skill-icons-animation img:hover {
+  transform: scale(1.2);
+}
+
+.description-animation {
+  width: 30%;
+  height: 100%;
+  float: right;
+  margin-left: 1rem;
+
+}
+
 @keyframes line-fade-in {
   0% {
     opacity: 0;
