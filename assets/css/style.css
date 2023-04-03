@@ -259,6 +259,15 @@ nav {
   z-index: 1;
 }
 
+@keyframes line-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .skill-icons-animation {
   width: 30%;
   height: 100%;
@@ -271,7 +280,7 @@ nav {
   align-items: center;
   position: relative;
   right: -30%;
-  animation: slide-in 1.5s ease-in 5s forwards;
+  animation: slide-in 2s ease-in 6s forwards;
   opacity: 0;
 }
 
@@ -291,11 +300,11 @@ nav {
 }
 
 .skill-icons-animation img {
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .skill-icons-animation img:hover {
-  transform: scale(1.2);
+  transform: scale(1.5);
 }
 
 .description-animation {
@@ -306,12 +315,5 @@ nav {
 
 }
 
-@keyframes line-fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+
 
