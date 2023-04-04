@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucas Guovach | Full-Stack Developer</title>
     <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://kit.fontawesome.com/ec1214758d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -16,14 +17,13 @@
                 <img src="/assets/images/logo.svg" alt="Logo">
             </div>
             <ul class="nav-links">
-                <li><a href="#" class="active">Home</a></li>
+                <li><a href="/index.html" class="active">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Projects</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
-            <div class="cv-button">
-                <a href="#"> Download CV</a>
-            </div>
+            <button onclick="downloadPDF()" class="moving-border-button">Download CV
+            </button>
         </nav>
     </header>
     <main>
@@ -60,13 +60,61 @@
                 </div>
             </div>
         </section>
-        <section class="section section2"></section>
-        <section class="section section3"></section>
-        <section class="section section4"></section>
+        <section class="section section2">
+            <div class="what-do">
+                <h1>I do</h1>
+                <h2 class="what-do-animations">websites<span><i class="fa-solid fa-circle"></i></span></h2>
+                <h2 class="what-do-animations">applications<span><i class="fa-solid fa-circle"></i></span></h2>
+                <h2 class="what-do-animations">games<span><i class="fa-solid fa-circle"></i></span></h2>
+            </div>
+        </section>
+        <section class="section section3">
+            <div class="about-me paragraph-slider" id="about-me">
+                <div class="paragraph active" id="paragraph1">
+                    <p>I am a versatile Full-Stack Software Developer who blends my expertise
+                        in programming with love for content creation and game development. I am proficient in Python,
+                        JavaScript, C#, and Lua. <br><br> I have a proven track record of developing and maintaining web
+                        applications, providing data-driven insights, and delivering high-impact multimedia content.
+                        <br><br>
+                        My experience at guovach.com and my game development education at Harvard University showcase my
+                        ability
+                        to bring innovative ideas to life.</p>
+                </div>
+                <div class="paragraph" id="paragraph2">
+                    <p>One of my software projects, Personal Expense Tracker, is an app that allows users to manage
+                        their expenses by storing data in Google Sheets documents. With 15 different expense categories,
+                        users can add new costs, edit existing payments, and generate insightful statistics such as
+                        monthly statements or comparisons between years or months. <br><br>
+                        Another project I'm proud of is Northern Lights Photo Trip. This website assists people in
+                        finding ideal locations for photographing the Northern Lights in Sweden. The site lets users
+                        discover when and where aurora photography enthusiasts gather and join a group for more relevant
+                        information. <br><br>
+                        I am incredibly proud of my game development accomplishments, such as the fast-paced trivia
+                        game TIMEQUIZ, which reflects my outside-the-box thinking and dedication to creating engaging
+                        experiences.</p>
+                </div>
+                <div class="paragraph" id="paragraph3">
+                    <p>I'm your guy if you're looking for a self-thinking, hard-working professional who excels in
+                        Full-Stack development, content creation, game development, and app development. My diverse
+                        background in sales, pharmaceuticals, and business ownership demonstrates my adaptability and
+                        resourcefulness. <br><br>
+                        As a multilingual professional fluent in English and Polish and with elementary
+                        proficiency in Swedish, I can effectively communicate with clients across the globe. <br><br>
+                        Don't hesitate to contact me so we can collaborate and turn your ideas into real, impactful
+                        projects.</p>
+                </div>
+
+            </div>
+            <button onclick="nextParagraph()">Next</button>
+
+        </section>
+        <section class="section section4">
+
+        </section>
 
     </main>
     <footer></footer>
-    <script src="/assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
