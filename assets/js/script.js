@@ -24,20 +24,25 @@ function downloadPDF() {
 
 
 // Projects slideshow
-let slideIndex = 0;
-const projectCards = document.querySelectorAll('.project-card');
+document.addEventListener("DOMContentLoaded", function() {
+    const projectCards = document.querySelectorAll(".project-card");
+    let activeCardIndex = 0;
+    const projectSlider = document.querySelector(".project-slider");
 
-// Function to show the next slide
-function showNextSlide() {
-  // Get the current and next slide indexes
-  const currentSlideIndex = slideIndex;
-  slideIndex = (slideIndex + 1) % projectCards.length;
-  const nextSlideIndex = slideIndex;
+    function changeProjectCard() {
+        projectCards[activeCardIndex].classList.remove("active");
+        activeCardIndex++;
 
-  // Add the active class to the next slide and remove it from the current slide
-  projectCards[currentSlideIndex].classList.remove('active');
-  projectCards[nextSlideIndex].classList.add('active');
-}
+        if (activeCardIndex >= projectCards.length) {
+            activeCardIndex = 0;
+        }
 
-// Automatically show the next slide every 5 seconds
-setInterval(showNextSlide, 5000);
+        projectCards[activeCardIndex].classList.add("active");
+        projectSlider.style.backgroundImage = `url(${projectCards[activeCardIndex].dataset.bg})`;
+    }
+
+    // Set the background of the slider to the first project card's background initially
+    projectSlider.style.backgroundImage = `url(${projectCards[0].dataset.bg})`;
+
+    setInterval(changeProjectCard, 5000); // Change the project card every 5 seconds
+});
