@@ -67,24 +67,23 @@ nav {
 
 .moving-border-button {
   background-color: blueviolet;
+  color: #eee;
   font-family: 'Kanit', sans-serif;
   border-radius: 20px;
-  color: #eee;
   font-size: 18px;
   padding: 12px 24px;
-  text-decoration: none;
   text-align: center;
   outline: none;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   margin-right: 40px;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s;
 }
 
 .moving-border-button:hover {
   background-color: transparent;
-  color: #333;
+  color: blueviolet;
 }
 
 .moving-border-button:before {
@@ -264,7 +263,7 @@ nav {
   position: relative;
   overflow: hidden;
   min-height: 100vh;
-  background-color: #222;
+  background-color: #ddd;
   }
 
   @keyframes fadeIn {
@@ -608,10 +607,12 @@ nav {
     background-position: center; 
     background-repeat: no-repeat;
     background-size: cover;
+    transition: background-image 1s ease-in-out;
 }
 
 .project-card {
     display: none;
+    transition: opacity 1s ease-in-out;
 }
 
 .project-card.active {
@@ -619,14 +620,18 @@ nav {
 }
 
 .project-info {
-    padding: 1rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    max-width: 50rem;
+    max-width: 60rem;
     color: #eee;
+    background-color: rgba(36, 34, 34, 0.7);
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    
   }
   
   .project-name {
@@ -638,9 +643,9 @@ nav {
   
   .project-description {
     font-size: 1.1rem;
-    margin-bottom: 1rem;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
+    padding: 0 9rem 0 9rem;
   }
   
   .project-tools {
@@ -649,14 +654,18 @@ nav {
     margin-top: 3rem;
   }
   
-  .project-tools li {
+  .project-tools img {
     display: inline-block;
+    width: 4rem;
+    height: auto;
     margin-right: 0.5rem;
-    background-color: #eee;
-    color: #222;
     padding: 0.25rem 0.5rem;
-    border-radius: 5px;
-    font-size: 0.8rem;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+  }
+  
+  .project-tools img:hover {
+    transform: scale(0.7);
   }
   
   .project-link {
@@ -672,7 +681,7 @@ nav {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    margin: 2rem;
+    margin: 2rem 0 0.5rem 0;
     transition: background-color 0.3s, color 0.3s;
   }
   
@@ -701,26 +710,54 @@ nav {
     }
   }
 
-.project-slider [data-bg="assets/images/project-1.png"] {
-    background-color: transparent; 
-    height: 400px;
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover; 
-  }
+/* Style Pause Button and Play Button */
 
-.project-slider [data-bg="assets/images/project-2.jpg"] {
-    background-color: transparent; 
-    height: 400px;
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover; 
+.btn {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+    margin: 1rem;
 }
 
-.project-slider [data-bg="assets/images/project-3.png"] {
-    background-color: transparent; 
-    height: 400px;
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover; 
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.start-btn {
+    background-color: #4CAF50;
+}
+
+.start-btn:hover {
+    background-color: #3F8C40;
+}
+
+.pause-btn {
+    background-color: #f00;
+}
+
+.pause-btn:hover {
+    background-color: rgb(196, 28, 28)
+}
+
+.btn i {
+    font-size: 1.4rem;
+    color: #eee;
+
 }

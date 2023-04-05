@@ -22,8 +22,7 @@
                 <li><a href="#">Projects</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
-            <button onclick="downloadPDF()" class="moving-border-button">Download CV
-            </button>
+            <button onclick="window.open('assets/files/resume.pdf', '_blank')" class="moving-border-button">download-cv</button>
         </nav>
     </header>
     <main>
@@ -51,6 +50,7 @@
                     <img src="assets/images/skill-logo/12.svg" alt="postgreSQL">
                     <img src="assets/images/skill-logo/13.svg" alt="django">
                     <img src="assets/images/skill-logo/14.svg" alt="git">
+                    <img src="assets/images/skill-logo/15.svg" alt="heroku">
                 </div>
 
                 <div class="photo-animation-gradient-line"></div>
@@ -122,10 +122,10 @@
                             categories, edit existing payments and do some statistics based
                             on existing statistics, like see the year on a monthly statement
                             or compare two years or two monthly reports.</p>
-                        <ul class="project-tools">
-                            <li>PYTHON</li>
-                            <li>HEROKU</li>
-                        </ul>
+                        <div class="project-tools">
+                            <img src="assets/images/skill-logo/4.svg" alt="Python">
+                            <img src="assets/images/skill-logo/15.svg" alt="heroku">
+                        </div>
                         <a href="https://expense-tracker-app.herokuapp.com/" class="project-link" target="_blank">View
                             Project</a>
                     </div>
@@ -139,11 +139,11 @@
                             people to check when and where aurora photography
                             enthusiasts meet and join a group for more relevant
                             information.</p>
-                        <ul class="project-tools">
-                            <li>HTML5</li>
-                            <li>CSS3</li>
-                            <li>JAVASCRIPT</li>
-                        </ul>
+                        <div class="project-tools">
+                            <img src="assets/images/skill-logo/1.svg" alt="HTML">
+                            <img src="assets/images/skill-logo/2.svg" alt="CSS">
+                            <img src="assets/images/skill-logo/3.svg" alt="JS">
+                        </div>
                         <a href="https://lukaszglowacz.github.io/northern-lights-photography/index.html"
                             class="project-link" target="_blank">View Project</a>
                     </div>
@@ -157,15 +157,17 @@
                             friends. No references are allowed. Each correct answer moves you forward,
                             while wrong answers add 10 seconds to your time. Test your knowledge now!
                             We wish You luck!</p>
-                        <ul class="project-tools">
-                            <li>HTML5</li>
-                            <li>CSS3</li>
-                            <li>JAVASCRIPT</li>
-                        </ul>
+                        <div class="project-tools">
+                            <img src="assets/images/skill-logo/1.svg" alt="HTML">
+                            <img src="assets/images/skill-logo/2.svg" alt="CSS">
+                            <img src="assets/images/skill-logo/3.svg" alt="JS">
+                        </div>
                         <a href="https://lukaszglowacz.github.io/time-quiz-game/" class="project-link"
                             target="_blank">View Project</a>
                     </div>
                 </div>
+                <button id="pause-btn" class="pause-btn btn"><i class="fa-solid fa-pause"></i></button>
+                <button id="start-btn" class="start-btn btn"><i class="fa-solid fa-play"></i></button>
             </div>
         </section>
 
