@@ -591,6 +591,12 @@ nav {
   transition: all 0.1s ease-in-out;
 }
 
+.project-slider {
+    display: flex;
+    overflow-x: hidden;
+    position: relative;
+}
+
 .project-card {
     display: flex;
     flex-direction: column;
@@ -600,16 +606,60 @@ nav {
     overflow: hidden;
     margin-bottom: 2rem;
     height: 60%;
-    width: auto;
+    width: 100%;
     justify-content: center;
     align-items: center;
     padding: 5rem;
-    background-image: url(/assets/images/project-1.jpg);
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .project-card.active {
+    opacity: 1
+  }
+
+  .project-card.hidden {
+    visibility: hidden;
+  }
+
+  #expense-tracker {
+    background-color: transparent;
+    position: relative;
+    z-index: 0;
+  }
+
+  #expense-tracker::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/assets/images/project-1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.5);
+    z-index: -1;
+  }
+
+  #northern-lights {
+    background-image: url(/assets/images/project-2.jpg);
     background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
 
+  #time-quiz {
+    background-image: url(/assets/images/project-3.png);
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
   .project-image img {
@@ -703,4 +753,8 @@ nav {
     100% {
       transform: rotate(360deg);
     }
+  }
+
+  .hidden {
+      display: none
   }
