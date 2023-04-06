@@ -12,22 +12,32 @@
 
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <a href="javascript:reloadAndScrollToTop()">
-                    <img src="assets/images/logo.svg" alt="Logo">
-                  </a>
+        <div class="nav-up">
+            <nav>
+                <div class="logo">
+                    <a href="javascript:reloadAndScrollToTop()">
+                        <img src="assets/images/logo.svg" alt="Logo">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#reputation">Reputation</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button onclick="window.open('assets/files/resume.pdf', '_blank')"
+                    class="moving-border-button">download-cv</button>
+
+            </nav>
+        </div>
+        <div class="nav-down max-width">
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#reputation">Reputation</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button onclick="window.open('assets/files/resume.pdf', '_blank')"
-                class="moving-border-button">download-cv</button>
-        </nav>
+        </div>
+
+
     </header>
     <main>
         <section class="section section1" id="home">
