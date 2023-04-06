@@ -82,3 +82,25 @@ function changeProjectCard() {
         projectSlider.style.backgroundImage = `url(${projectCards[activeCardIndex].dataset.bg})`;
     }, 3000);
 }
+
+
+// Active link when user scroll webiste
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".nav-links li a");
+    const sections = document.querySelectorAll("section");
+  
+    function setActiveNavLink() {
+      let currentIndex = sections.length;
+  
+      while (--currentIndex && window.scrollY + 50 < sections[currentIndex].offsetTop) {
+        // Empty block
+      }
+  
+      navLinks.forEach((navLink) => navLink.classList.remove("active"));
+      navLinks[currentIndex].classList.add("active");
+    }
+  
+    setActiveNavLink();
+    window.addEventListener("scroll", setActiveNavLink);
+  });
+  

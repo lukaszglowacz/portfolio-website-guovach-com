@@ -17,23 +17,25 @@
                 <img src="assets/images/logo.svg" alt="Logo">
             </div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#reputation">Reputation</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <button onclick="window.open('assets/files/resume.pdf', '_blank')" class="moving-border-button">download-cv</button>
+            <button onclick="window.open('assets/files/resume.pdf', '_blank')"
+                class="moving-border-button">download-cv</button>
         </nav>
     </header>
     <main>
-        <section class="section section1">
+        <section class="section section1" id="home">
             <div class="animation-container">
                 <div class="gradient-line"></div>
                 <div class="reveal-text">
                     <h1>guovach.com</h1>
                 </div>
             </div>
-            <div class="photo-animation">
+            <div class="photo-animation max-width">
 
                 <div class="skill-icons-animation">
                     <img src="assets/images/skill-logo/1.svg" alt="HTML">
@@ -55,15 +57,15 @@
 
                 <div class="photo-animation-gradient-line"></div>
                 <div class="description-animation">
-                    <h2>Hi! I'm Lucas Guovach</h2>
+                    <h2><span>Hi! I'm </span>Lucas Guovach</h2>
                     <p class="description current">Full-Stack Software Developer</p>
                     <p class="description">Game Developer</p>
                     <p class="description">Content Creator</p>
                 </div>
             </div>
         </section>
-        <section class="section section2">
-            <div class="what-do">
+        <section class="section section2" id="about">
+            <div class="what-do max-width">
                 <h1>I do</h1>
                 <h2 class="what-do-animations">websites<span><i class="fa-solid fa-circle"></i></span></h2>
                 <h2 class="what-do-animations">applications<span><i class="fa-solid fa-circle"></i></span></h2>
@@ -71,9 +73,9 @@
             </div>
         </section>
         <section class="section section3">
-            <div class="about-me paragraph-slider" id="about-me">
+            <div class="about-me paragraph-slider max-width" id="about-me">
                 <div class="paragraph active" id="paragraph1">
-                    <p>I am a versatile Full-Stack Software Developer who blends my expertise
+                    <p>I am a versatile Full-Stack Software Developer who blends expertise
                         in programming with love for content creation and game development. I am proficient in Python,
                         JavaScript, C#, and Lua. <br><br> I have a proven track record of developing and maintaining web
                         applications, providing data-driven insights, and delivering high-impact multimedia content.
@@ -111,9 +113,9 @@
             <button onclick="nextParagraph()">Next</button>
 
         </section>
-        <section class="section section4">
-            <div class="project-slider">
-                <div class="project-card active" id="expense-tracker" data-bg="assets/images/project-1.webp">
+        <section class="section section4" id="projects">
+            <div class="project-slider max-width">
+                <div class="project-card active" id="expense-tracker" data-bg="assets/images/project-1.jpg">
                     <div class="project-info">
                         <h3 class="project-name">Personal Expense Tracker</h3>
                         <p class="project-description">Personal Expense Tracker is an app to
@@ -130,7 +132,7 @@
                             Project</a>
                     </div>
                 </div>
-                <div class="project-card" id="northern-lights" data-bg="assets/images/project-2.webp">
+                <div class="project-card" id="northern-lights" data-bg="assets/images/project-2.jpg">
                     <div class="project-info">
                         <h3 class="project-name">Northern Lights Photo Trip</h3>
                         <p class="project-description">Northern Lights Photo Trip is a
@@ -148,7 +150,7 @@
                             class="project-link" target="_blank">View Project</a>
                     </div>
                 </div>
-                <div class="project-card" id="time-quiz" data-bg="assets/images/project-3.webp">
+                <div class="project-card" id="time-quiz" data-bg="assets/images/project-3.jpg">
                     <div class="project-info">
                         <h3 class="project-name">The Time Quiz Game</h3>
                         <p class="project-description">The Time Quiz Game is a fast-paced trivia game
@@ -170,6 +172,8 @@
                 <button id="start-btn" class="start-btn btn"><i class="fa-solid fa-play"></i></button>
             </div>
         </section>
+        <section class="section section5" id="reputation"></section>
+        <section class="section section6" id="contact"></section>
 
     </main>
     <footer></footer>
