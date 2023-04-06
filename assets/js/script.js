@@ -103,4 +103,18 @@ document.addEventListener("DOMContentLoaded", function () {
     setActiveNavLink();
     window.addEventListener("scroll", setActiveNavLink);
   });
+
   
+//   Reload and go to the top when user click logo icon
+
+function scrollToTop(duration) {
+    return new Promise((resolve) => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setTimeout(resolve, duration);
+    });
+  }
+
+async function reloadAndScrollToTop() {
+    await scrollToTop(700);
+    location.reload();
+  }
