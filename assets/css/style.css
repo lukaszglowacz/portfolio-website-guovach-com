@@ -85,7 +85,7 @@ h4 {
 
 header {
     background-color: #eee;
-    height: 100px;
+    height: 80px;
     position: fixed;
     top: 0;
     left: 0;
@@ -98,13 +98,19 @@ header {
 }
 
 .nav-down {
-    height: 8px;
+    height: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eee;
 }
 
 .progress-container {
     width: 100%;
     height: 10px;
     background: #ddd;
+    width: 1200px;
 }
   
 .progress-bar {
@@ -127,7 +133,13 @@ nav {
     justify-content: center;
     cursor: pointer;
     align-items: center;
-    
+}
+
+.logo img {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
 }
   
 .nav-links {
@@ -180,6 +192,7 @@ nav {
   overflow: hidden;
   transition: background-color 0.3s;
   border: none;
+  
 }
 
 .moving-border-button:hover {
@@ -513,16 +526,14 @@ nav {
 .what-do h1 {
   font-size: 15rem;
   font-weight: 600;
-  margin: 0;
+  margin: 0 0 10rem 0;
   padding: 0;
-  margin-bottom: 10rem;
 }
 
 .what-do h2 {
   font-size: 8rem;
-  margin: 0;
+  margin: 10rem 0 0 0;
   padding: 0;
-  margin-top: 10rem;
 }
 
 .what-do h2 span {
@@ -704,7 +715,7 @@ nav {
   }
   
   .project-description {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     padding: 0 9rem 0 9rem;
@@ -718,7 +729,7 @@ nav {
   
   .project-tools img {
     display: inline-block;
-    width: 4rem;
+    width: 5rem;
     height: auto;
     margin-right: 0.5rem;
     padding: 0.25rem 0.5rem;
@@ -887,19 +898,41 @@ nav {
 @media (min-width: 320px) and (max-width: 480px) {
     
     header {
-        width: 100%;
+        width: 320px;
+        height: 70px;
+        
     }
     nav {
         width: 320px;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .nav-links li {
+    .nav-links {
         display: none;
     }
+    
     .nav-down {
         height: 12px;
-        width: 320px;
+        width: 100%;
     }
+    .logo {
+        width: 55px;
+        height: 55px;
+    }
+    .logo img {
+        margin: 0;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        align-items: center;
+    }
+    
+      
     .animation-container {
         width: 100%;
       }
@@ -963,15 +996,18 @@ nav {
           top: 30%;
         }
     }
-    .photo-animation {
-        width: 100%;
-        position: relative;
-        top: 300px;
+    .section {
+        height: 100vh;
+        transition: opacity 1s ease-in-out;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        border: 1px solid red;
+    }
+
+    .photo-animation {
+        height: 310px;
+        flex-direction:column;
+        top: 100px;
     }
       
     .photo-animation-gradient-line {
@@ -981,111 +1017,237 @@ nav {
       
     .skill-icons-animation {
         width: 100%;
-        height: 300px;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        opacity: 0;
+        height: 200px;
+        margin: 0.7rem auto;
+        
     }
       
-      
     .skill-icons-animation img {
-        border: 1px solid blue;
         margin: 0;
-        width: 50px;
-        height: 50px;
+        width: 55px;
+        height: 55px;
     }
     
       
     .description-animation {
-        width: 30%;
-        height: 100%;
-        float: right;
-        margin-left: 0;
-        position: relative;
-        font-family: 'Poppins', sans-serif;
-        color: #eee;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        overflow: hidden;
-        
+        width: 100%;
+        margin-top: 0.7rem;
     }
       
     .description-animation h2 {
-        font-size: 3.2rem;
-        margin: 0;
-        padding: 0;
-        opacity: 0;
-        transform: translateX(-100%);
-        animation: slideIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 7s forwards;
-        margin-bottom: 70px;
-        border-bottom: 1px solid var(--var-navlink-color-transparent);
-      
-    }
-      
-    .description-animation h2 span {
-          font-weight: 100;
-          color: var(--var-navlink-color-transparent);
-    }
-      
-    @keyframes slideIn {
-        0% {
-          opacity: 0;
-          transform: translateX(-100%);
-        }
-        40% {
-          opacity: 0.7;
-          transform: translateX(10%);
-        }
-        80% {
-          opacity: 0.8;
-          transform: translateX(-5%);
-        }
-        100% {
-          opacity: 1;
-          transform: translateX(0);
-        }
+        font-size: 1.7rem;
+        margin-top: 1.5rem;
     }
       
     .description-animation p {
-        font-size: 1.5rem;
-        margin: 80px 0 0 0;
-        padding: 0.7rem 1.4rem 0.7rem 1.4rem;
-        font-weight: 200;
-        color: #eee;
-        background-color: var(--var-navlink-color-transparent);
-        border-radius: 3px;
+        font-size: 1rem;
+        margin: 3.2rem 0 1rem 0;
+        padding: 0.1rem 0.3rem 0.1rem 0.3rem;
     }
       
-    .description {
+    .what-do h1 {
+        font-size: 7.3rem;
+        margin: 0 0 5.5rem 0;
+    }
+      
+    .what-do h2 {
+        font-size: 3.3rem;
+        margin: 5.5rem 0 0 0;
+    }
+      
+    .what-do h2 span {
+        font-size: .8rem;
+    }
+    .about-me {
+        width: 100%;
+        height: 450px;
+        padding: 1rem;
+    }
+      
+    .about-me p {
+        font-size: 0.9rem;
+        height: 450px;
+        line-height: 1.5rem;
+        padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+        overflow-y: scroll;
+    }
+      
+      /* Button Styles */
+      .section3 button {
+        margin: 20px auto 20px;
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+    .project-slider {
         position: absolute;
-        opacity: 0;
-        animation-name: fadeInOut;
-        animation-duration: 9s;
-        animation-iteration-count: infinite;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: transparent; 
+        background-position: center; 
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: background-image 1s ease-in-out;
     }
-      
-    .description.current {
-        animation-delay: 8s;
+    
+    .project-card {
+        display: none;
+        transition: opacity 1s ease-in-out;
+        height: 80%;
     }
-      
-    .description:nth-of-type(2) {
-        animation-delay: 11s;
+    
+    .project-card.active {
+        display: block;
     }
+    
+    .project-info {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 87%;
+        height: 100%;
+        margin: 0 auto;
+        color: #eee;
+        background-color: rgba(36, 34, 34, 0.7);
+        padding: 0.2rem 1rem 0.2rem 1rem;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        
+      }
       
-    .description:nth-of-type(3) {
-        animation-delay: 14s;
-    }
+      .project-name {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin: 0.1rem 0.1rem 0.5rem 0.1rem; 
+        font-family: 'Kanit', sans-serif;
+        border-bottom: 2px solid var(--var-navlink-color-transparent);
+      }
       
-    @keyframes fadeInOut {
-        0%, 33.333%, 100% {
-          opacity: 0;
+      .project-description {
+        font-size: 0.9rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        padding: 0 0.5rem 0 0.5rem;
+        overflow-y: scroll;
+        height: 150px;
+      }
+      
+      .project-tools {
+        list-style: none;
+        padding: 0;
+        margin-top: 1rem;
+      }
+      
+      .project-tools img {
+        display: inline-block;
+        width: 3rem;
+        height: auto;
+        margin-right: 0.5rem;
+        padding: 0.25rem 0.5rem;
+        transition: transform 0.5s ease;
+        cursor: pointer;
+      }
+      
+      .project-tools img:hover {
+        transform: scale(0.7);
+      }
+      
+      .project-link {
+        background-color: var(--var-navlink-color-transparent);
+        font-family: 'Kanit', sans-serif;
+        border-radius: 20px;
+        color: #eee;
+        font-size: 18px;
+        padding: 12px 24px;
+        text-decoration: none;
+        text-align: center;
+        outline: none;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        margin: 2rem 0 0.5rem 0;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      
+      .project-link:hover {
+        background-color: transparent;
+        color: #eee;
+      }
+      
+      .project-link:before {
+        content: '';
+        position: absolute;
+        top: -100%;
+        left: -100%;
+        width: 200%;
+        height: 200%;
+        background-image: linear-gradient(45deg, rgba(211, 211, 211, 0.2) 25%, transparent 25%, transparent 50%, rgba(211, 211, 211, 0.2) 50%, rgba(211, 211, 211, 0.2) 75%, transparent 75%, transparent);
+        animation: border-move 3s linear infinite;
+      }
+      
+      @keyframes border-move {
+        0% {
+          transform: rotate(0deg);
         }
-        11.111%, 22.222% {
-          opacity: 1;
+        100% {
+          transform: rotate(360deg);
         }
+      }
+    
+    /* Style Pause Button and Play Button */
+    
+    .btn {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite;
+        margin: 1rem;
+    }
+    
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    
+    .btn:hover {
+        transform: scale(1.1);
+    }
+    
+    .start-btn {
+        background-color: #4CAF50;
+    }
+    
+    .start-btn:hover {
+        background-color: #3F8C40;
+    }
+    
+    .pause-btn {
+        background-color: #f00;
+    }
+    
+    .pause-btn:hover {
+        background-color: rgb(196, 28, 28)
+    }
+    
+    .btn i {
+        font-size: 1.4rem;
+        color: #eee;
+    
     }
 }

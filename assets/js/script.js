@@ -29,9 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
     let activeCardIndex = 0;
     const projectSlider = document.querySelector(".project-slider");
 
-    const pauseBtn = document.getElementById("pause-btn");
-    const startBtn = document.getElementById("start-btn");
-
     function changeProjectCard() {
         projectCards[activeCardIndex].classList.remove("active");
         activeCardIndex++;
@@ -47,22 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Set the background of the slider to the first project card's background initially
     projectSlider.style.backgroundImage = `url(${projectCards[0].dataset.bg})`;
 
-    let intervalId = setInterval(changeProjectCard, 5000); // Change the project card every 5 seconds
-
-    pauseBtn.addEventListener("click", function() {
-        clearInterval(intervalId);
-        pauseBtn.style.display = "none";
-        startBtn.style.display = "inline-block";
-    });
-
-    startBtn.addEventListener("click", function() {
-        intervalId = setInterval(changeProjectCard, 5000);
-        startBtn.style.display = "none";
-        pauseBtn.style.display = "inline-block";
-    });
-
-    // Initially hide the start button
-    startBtn.style.display = "none";
+    let intervalId = setInterval(changeProjectCard, 15000); // Change the project card every 5 seconds
 });
 
 
