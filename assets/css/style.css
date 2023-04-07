@@ -81,6 +81,7 @@ h4 {
     }
   }
 
+
 /* Navbar */
 
 header {
@@ -91,43 +92,26 @@ header {
     left: 0;
     right: 0;
     z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav-down {
-    height: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #eee;
-}
-
-.progress-container {
-    width: 100%;
-    height: 10px;
-    background: #ddd;
-    width: 1200px;
-}
-  
-.progress-bar {
-    height: 100%;
-    background: var(--var-navlink-color);
-    width: 0%;
 }
 
 nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     margin: 0 auto;
     height: 100%;
     width: 1200px;
 }
-  
+
+.nav-up {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-up .fa-bars {
+    display: none
+}
+
 .logo {
     display: flex;
     justify-content: center;
@@ -220,6 +204,30 @@ nav {
   }
 }
 
+.nav-down {
+    height: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eee;
+}
+
+.progress-container {
+    width: 100%;
+    height: 10px;
+    background: #ddd;
+    width: 1200px;
+}
+  
+.progress-bar {
+    height: 100%;
+    background: var(--var-navlink-color);
+    width: 0%;
+}
+
+
+/* Animation container */
 .animation-container {
     position: absolute;
     left: 50%;
@@ -898,41 +906,89 @@ nav {
 @media (min-width: 320px) and (max-width: 480px) {
     
     header {
-        width: 320px;
-        height: 70px;
-        
-    }
-    nav {
-        width: 320px;
-        display:flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        height: 65px;
     }
 
-    .nav-links {
-        display: none;
-    }
-    
-    .nav-down {
-        height: 12px;
+    nav {
+        flex-direction: column;
         width: 100%;
+        
     }
+
+    .nav-up .fa-bars {
+        display: block;
+        margin-right: 30px;
+        font-size: 1.9rem;
+        color: var(--var-navlink-color);
+        transition: transform 0.3s ease-in-out, color 0.3s ease-in-out
+    }
+
     .logo {
-        width: 55px;
-        height: 55px;
+        margin-left: 10px;
     }
+
     .logo img {
         margin: 0;
-        width: 45px;
-        height: 45px;
+        width: 50px;
+        height: 50px;
         display: flex;
         justify-content: center;
         cursor: pointer;
         align-items: center;
     }
-    
+
+    .fa-bars.active {
+        transform: rotate(-45deg);
+        color: blueviolet;
+    }
+
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        transition: all 1s ease-in-out;
+        transform-origin: top right;
+    }
+
+    .nav-links.active {
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        top: 46px;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        z-index: 1002;
+        width: 8rem;
+        height: 16rem;
+        padding: 3rem 5rem 1rem 2rem;
+        border-radius: 5rem 0 5rem 0;
+    }
+
+    .nav-links li a {
+        font-size: 2rem;
+    }
+
+    .nav-links.active li {
+        opacity: 0;
+        transform: translateX(20px);
+        animation: navLinkFade 0.5s ease forwards;
+      }
       
+      @keyframes navLinkFade {
+        from {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
     .animation-container {
         width: 100%;
       }
@@ -990,10 +1046,10 @@ nav {
           top: 50%;
         }
         20% {
-            top: 32%;
+            top: 22%;
         }
         100% {
-          top: 30%;
+          top: 20%;
         }
     }
     .section {
@@ -1006,19 +1062,20 @@ nav {
 
     .photo-animation {
         height: 310px;
-        flex-direction:column;
-        top: 100px;
+        flex-direction: column;
+        top: 30px;
     }
       
     .photo-animation-gradient-line {
         display: none;
     }
       
-      
+    /* Skill icons animation */
     .skill-icons-animation {
         width: 100%;
         height: 200px;
         margin: 0.7rem auto;
+        top: 50px
         
     }
       
@@ -1027,24 +1084,27 @@ nav {
         width: 55px;
         height: 55px;
     }
-    
-      
+    /* Description animation */
+
     .description-animation {
         width: 100%;
-        margin-top: 0.7rem;
-    }
+        margin-top: -450px;
+        top: 30px;
+      }
       
-    .description-animation h2 {
-        font-size: 1.7rem;
+      .description-animation h2 {
+        font-size: 2rem;
         margin-top: 1.5rem;
-    }
+      }
       
-    .description-animation p {
-        font-size: 1rem;
-        margin: 3.2rem 0 1rem 0;
+      
+      .description-animation p {
+        font-size: 1.3rem;
+        margin: 4rem 0 1rem 0;
         padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+        text-align: center;
     }
-      
+
     .what-do h1 {
         font-size: 7.3rem;
         margin: 0 0 5.5rem 0;
@@ -1198,56 +1258,4 @@ nav {
           transform: rotate(360deg);
         }
       }
-    
-    /* Style Pause Button and Play Button */
-    
-    .btn {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        position: relative;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        animation: pulse 2s infinite;
-        margin: 1rem;
     }
-    
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.1);
-        }
-        100% {
-            transform: scale(1);
-        }
-    }
-    
-    .btn:hover {
-        transform: scale(1.1);
-    }
-    
-    .start-btn {
-        background-color: #4CAF50;
-    }
-    
-    .start-btn:hover {
-        background-color: #3F8C40;
-    }
-    
-    .pause-btn {
-        background-color: #f00;
-    }
-    
-    .pause-btn:hover {
-        background-color: rgb(196, 28, 28)
-    }
-    
-    .btn i {
-        font-size: 1.4rem;
-        color: #eee;
-    
-    }
-}

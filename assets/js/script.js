@@ -112,3 +112,26 @@ function myFunction() {
   document.getElementById("myBar").style.width = scrolled + "%";
 }
 
+
+// Transform menu button on mobile devices and add an animation
+
+const navUp = document.querySelector('.fa-bars');
+
+  navUp.addEventListener('click', () => {
+    navUp.classList.toggle('active');
+});
+
+const tripleMenu = document.querySelector('.fa-bars');
+const navLinks = document.querySelector('.nav-links');
+const navLinksList = document.querySelectorAll('.nav-links li');
+
+tripleMenu.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+navLinksList.forEach((li) => {
+  li.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    navUp.classList.remove('active');
+  });
+});
